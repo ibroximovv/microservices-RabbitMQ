@@ -1,0 +1,50 @@
+{
+  "$schema": "https://json.schemastore.org/nest-cli",
+  "collection": "@nestjs/schematics",
+  "sourceRoot": "apps/mainGateway/src",
+  "compilerOptions": {
+    "deleteOutDir": true,
+    "webpack": true,
+    "tsConfigPath": "apps/mainGateway/tsconfig.app.json"
+  },
+  "projects": {
+    "l": {
+      "type": "library",
+      "root": "libs/l",
+      "entryFile": "index",
+      "sourceRoot": "libs/l/src",
+      "compilerOptions": {
+        "tsConfigPath": "libs/l/tsconfig.lib.json"
+      }
+    },
+    "mainGateway": {
+      "type": "application",
+      "root": "apps/mainGateway",
+      "entryFile": "main",
+      "sourceRoot": "apps/mainGateway/src",
+      "compilerOptions": {
+        "tsConfigPath": "apps/mainGateway/tsconfig.app.json"
+      }
+    },
+    "product": {
+      "type": "application",
+      "root": "apps/product",
+      "entryFile": "main",
+      "sourceRoot": "apps/product/src",
+      "compilerOptions": {
+        "tsConfigPath": "apps/product/tsconfig.app.json"
+      }
+    },
+    "shared": {
+      "type": "library",
+      "root": "libs/shared",
+      "entryFile": "index",
+      "sourceRoot": "libs/shared/src",
+      "compilerOptions": {
+        "tsConfigPath": "libs/shared/tsconfig.lib.json"
+      }
+    }
+  },
+  "monorepo": true,
+  "root": "apps/mainGateway"
+}
